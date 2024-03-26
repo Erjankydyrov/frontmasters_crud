@@ -1,0 +1,13 @@
+.todo_list {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+  }
+}
