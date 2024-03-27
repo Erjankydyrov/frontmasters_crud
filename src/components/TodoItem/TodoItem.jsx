@@ -1,7 +1,7 @@
 import axios from "axios";
 import "./TodoItem.scss";
 
-const TodoItem = ({ id, title, desc, checked }) => {
+const TodoItem = ({ id, title, desc, checked, setEditMod }) => {
   const deleteTodo = () => {
     axios.delete(`http://localhost:3000/todos/${id}`);
   };
@@ -23,6 +23,7 @@ const TodoItem = ({ id, title, desc, checked }) => {
         </div>
         <div>
           <button onClick={() => deleteTodo()}>Delete</button>
+          <button onClick={() => setEditMod(id)}>Edit</button>
         </div>
       </div>
     </li>
