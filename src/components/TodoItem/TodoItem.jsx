@@ -6,15 +6,26 @@ const TodoItem = ({ id, title, desc, checked, setEditMod }) => {
     axios.delete(`http://localhost:3000/todos/${id}`);
   };
 
+  const checkedTodo = (id, newChecked) => {
+    const data = {
+      title: title,
+      desc: desc,
+      checked: newChecked,
+    };
+
+    axios.patch(`http://localhost:3000/todos/${id}`, data);
+  };
+
   return (
     <li className="todo_item">
       <div className="todo_flex">
         <div>
           <input
             type="checkbox"
-            defaultValue={checked}
+            defaultChecked={checked}
             name={title.toLowerCase()}
             id={id}
+            onChange={(e) => checkedTodo(id, e.target.checked)}
           />
         </div>
         <div>

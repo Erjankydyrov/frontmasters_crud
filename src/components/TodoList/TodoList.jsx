@@ -11,7 +11,14 @@ const TodoList = ({ todos }) => {
       <ul>
         {todos.map((todo) =>
           editMod === todo.id ? (
-            <EditTodoForm key={todo.id} />
+            <EditTodoForm
+              key={todo.id}
+              id={todo.id}
+              title={todo.title}
+              desc={todo.desc}
+              checked={todo.checked}
+              setEditMod={setEditMod}
+            />
           ) : (
             <TodoItem
               key={todo.id}

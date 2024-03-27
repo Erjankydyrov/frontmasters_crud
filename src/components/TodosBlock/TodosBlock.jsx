@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import TodoForm from "../TodoForm/TodoForm";
 import "./TodosBlock.scss";
 import axios from "axios";
-import TodoList from '../TodoList/TodoList';
+import TodoList from "../TodoList/TodoList";
+import CheckedTodos from "../CheckedTodos/CheckedTodos";
 
 const TodosBlock = () => {
   const [todos, setTodos] = useState([]);
@@ -21,6 +22,7 @@ const TodosBlock = () => {
     <div className="todos_block">
       <TodoForm callback={getTodos()} />
       <TodoList todos={todos} />
+      <CheckedTodos />
     </div>
   );
 };
