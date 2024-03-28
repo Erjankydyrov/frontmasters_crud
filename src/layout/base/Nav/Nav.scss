@@ -1,0 +1,21 @@
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  .navhref {
+    padding: 10px 20px;
+    background-color: peru;
+    text-decoration: none;
+    display: inline-block;
+
+    &.active {
+      background-color: tomato;
+    }
+  }
+}
